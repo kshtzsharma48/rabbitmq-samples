@@ -1,4 +1,4 @@
-package com.dtzq.rabbitmq.sample.helloworld;
+package com.dtzq.rabbitmq.samples.helloworld;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -10,7 +10,7 @@ import junit.framework.TestSuite;
 public class AppTest extends TestCase {
     /**
      * Create the test case
-     * 
+     *
      * @param testName
      *            name of the test case
      */

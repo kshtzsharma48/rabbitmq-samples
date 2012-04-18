@@ -1,4 +1,4 @@
-package com.dtzq.rabbitmq.sample.helloworld;
+package com.dtzq.rabbitmq.samples.helloworld;
 
 /**
  * Hello world!
