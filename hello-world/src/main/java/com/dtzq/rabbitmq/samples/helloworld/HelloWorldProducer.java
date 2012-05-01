@@ -21,8 +21,8 @@ public class HelloWorldProducer {
         connectionFactory.setHost(hostname);
 
         Connection connection = connectionFactory.newConnection();
-        Channel channel = connection.createChannel();
 
+        Channel channel = connection.createChannel();
         channel.queueDeclare(queueName, false, false, false, null);
         channel.basicPublish("", queueName, null, message.getBytes());
 
