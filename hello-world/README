@@ -5,3 +5,8 @@ To use the hello-world sample:
   mvn exec:java -Dexec.mainClass="com.dtzq.rabbitmq.samples.helloworld.HelloWorldConsumer"
 * Use for example maven to start the producer to send a message:
   mvn exec:java -Dexec.mainClass="com.dtzq.rabbitmq.samples.helloworld.HelloWorldProducer"
+
+This sample is a basic use case, for more detailed information see the post located at:
+
+http://blog.dtzq.com/2012/04/hello-rabbit.html
+
