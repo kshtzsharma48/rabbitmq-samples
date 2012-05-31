@@ -17,17 +17,17 @@ public class HelloWorldConsumer {
     private static final String QUEUE_NAME = "test_queue";
     private static final String RABBITMQ_HOST = "localhost";
 
-    private void consumeMessages(String hostname, String queueName) throws IOException, InterruptedException {
+    private void consumeMessages() throws IOException, InterruptedException {
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost(hostname);
+        connectionFactory.setHost(RABBITMQ_HOST);
 
         Connection connection = connectionFactory.newConnection();
         Channel channel = connection.createChannel();
 
         QueueingConsumer queueingConsumer = new QueueingConsumer(channel);
 
-        channel.queueDeclare(queueName, false, false, false, null);
-        channel.basicConsume(queueName, true, queueingConsumer);
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        channel.basicConsume(QUEUE_NAME, true, queueingConsumer);
 
         while (true) {
             QueueingConsumer.Delivery delivery = queueingConsumer.nextDelivery();
@@ -35,8 +35,8 @@ public class HelloWorldConsumer {
         }
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws Exception {
         HelloWorldConsumer helloWorldConsumer = new HelloWorldConsumer();
-        helloWorldConsumer.consumeMessages(RABBITMQ_HOST, QUEUE_NAME);
+        helloWorldConsumer.consumeMessages();
     }
 }
