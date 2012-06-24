@@ -11,6 +11,7 @@
     </properties>
     <modules>
         <module>hello-world</module>
+        <module>hello-world-vhost-auth</module>
   </modules>
     <dependencyManagement>
         <dependencies>

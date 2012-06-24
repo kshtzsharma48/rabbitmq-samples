@@ -1,0 +1,17 @@
+To use the hello-world-vhost-auth sample:
+
+* Start RabbitMQ
+* Setup the vhost and user:
+  * rabbitmqctl add_user vhostauthtestuser vhostauthtestpass
+  * rabbitmqctl add_vhost vhostauthvhost
+  * rabbitmqctl set_permissions -p vhostauthvhost vhostauthtestuser ".*" ".*" ".*"
+* Compile sources:
+  * mvn compile
+* Use for example maven to start the consumer:
+  mvn exec:java -q -Dexec.mainClass="com.dtzq.rabbitmq.samples.helloworldvhostauth.HelloWorldConsumer"
+* Use for example maven to start the producer to send a message:
+  mvn exec:java -q -Dexec.mainClass="com.dtzq.rabbitmq.samples.helloworldvhostauth.HelloWorldProducer"
+
+This sample is a basic use case that builds upon the hello-world module but adds support for user and vhost access. For more detailed information see the post located at:
+
+http://blog.dtzq.com/2012/06/rabbitmq-users-and-virtual-hosts.html
