@@ -1,6 +1,8 @@
 To use the hello-world sample:
 
 * Start RabbitMQ
+* Compile sources:
+  mvn compile
 * Use for example maven to start the consumer:
   mvn exec:java -q -Dexec.mainClass="com.dtzq.rabbitmq.samples.helloworld.HelloWorldConsumer"
 * Use for example maven to start the producer to send a message:
