@@ -1,0 +1,25 @@
+Basic example illustrating usage of an AMQP backed Spring Batch ItemReader and ItemWriter implementation.
+
+NOTE: As of this time, this functionality is not included in the official Spring Batch codebase. If you would like
+to use the AMQP ItemReader / ItemWriter you must clone my fork of Spring Batch located at:
+
+https://github.com/chrisjs/spring-batch
+
+The associated commit ID for these changes is: 2f5d497e4fcbc876e3d54c00a253501c20210d9c
+
+I've submitted a pull request for this change and hoping it makes it into the main codebase :-)
+
+To use this sample:
+
+* You must have a working RabbitMQ instance.
+* From the sample directory, compile and package the sample:
+  * mvn package
+* Run the AmqpMessageProcessor to populate the queue with some messages:
+  * mvn -q exec:java -Dexec.mainClass="com.dtzq.rabbitmq.samples.batch.amqp.AmqpMessageProducer"
+* Ensure the queue "test.inbound" contains 10 messages (providing the defaults have not been changed).
+* Run the job to read from the "test.inbound" queue, process the messages and write them to the "test.outbound" queue:
+  * mvn -q exec:java -Dexec.mainClass="org.springframework.batch.core.launch.support.CommandLineJobRunner" \
+    -Dexec.arguments="classpath*:/META-INF/spring/jobs/amqp/amqp-example-job.xml,amqp-example-job"
+* Ensure the queue "test.outbound" contains 10 messages transformed from the "test.inbound" queue. Rather than the
+  messages containing a payload of "foo message: X", they should now be
+  * "Message: "foo message: X" processed on: <DATE>
