@@ -17,7 +17,11 @@
     <modules>
         <module>hello-world</module>
         <module>hello-world-vhost-auth</module>
-        <module>batch-amqp-itemreader-writer</module>
+
+        <!-- Only uncomment if you have installed to your local maven repo a clone of 
+             https://github.com/chrisjs/spring-batch/ with commit 44df3aca7fdc287b744c41c8e60edb783b9b716f
+             at version 2.1.9.BUILD-SNAPSHOT --> 
+        <!-- <module>batch-amqp-itemreader-writer</module> -->
     </modules>
     <dependencyManagement>
         <dependencies>
