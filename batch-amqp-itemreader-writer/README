@@ -1,12 +1,10 @@
 Basic example illustrating usage of an AMQP backed Spring Batch ItemReader and ItemWriter implementation.
 
-NOTE: As of this time, this functionality is not included in the official Spring Batch codebase. If you would like to use the AMQP ItemReader / ItemWriter you must clone my fork of Spring Batch located at:
+NOTE: As of this time, this functionality has been pulled into the official Spring Batch codebase, but will be released in version 2.2.0. If you would like to use the AMQP ItemReader / ItemWriter before 2.2.0 is released you must clone the Spring Batch project at:
 
-https://github.com/chrisjs/spring-batch
+https://github.com/SpringSource/spring-batch/
 
-And use branch: amqp-reader-writer
-
-I've submitted a pull request for this change and hoping it makes it into the main codebase :-)
+Using the master branch.
 
 To use this sample:
 
