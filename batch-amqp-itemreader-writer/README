@@ -1,3 +1,8 @@
+NOTE: This sample has been deprecated as it has been merged into the Spring Batch project as of 2.2.0. See spring-batch-samples/src/test/java/org/springframework/batch/sample/AMQPJobFunctionalTests.java for more details.
+
+---------
+
+
 Basic example illustrating usage of an AMQP backed Spring Batch ItemReader and ItemWriter implementation.
 
 NOTE: As of this time, this functionality has been pulled into the official Spring Batch codebase, but will be released in version 2.2.0. If you would like to use the AMQP ItemReader / ItemWriter before 2.2.0 is released you must clone the Spring Batch project at:
@@ -20,3 +25,4 @@ To use this sample:
 * Ensure the queue "test.outbound" contains 10 messages transformed from the "test.inbound" queue. Rather than the
   messages containing a payload of "foo message: X", they should now be
   * "Message: "foo message: X" processed on: <DATE>
+
